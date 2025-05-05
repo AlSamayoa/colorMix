@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/colorBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="58dp"
+            android:layout_marginEnd="53dp"
+            android:background="#000000"
+            android:backgroundTintMode="screen" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="451dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <EditText
+            android:id="@+id/redNum"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="185dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="0.0 to 1.0"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/redSeekBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/Red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="20dp"
+            android:text="Red"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toStartOf="@+id/redSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/redSeekBar"
+            android:layout_width="278dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="2dp"
+            android:max="255"
+            android:progressTint="@android:color/holo_red_dark"
+            app:layout_constraintBottom_toTopOf="@+id/greenNum"
+            app:layout_constraintEnd_toStartOf="@+id/redCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/Red"
+            app:layout_constraintTop_toBottomOf="@+id/redNum" />
+
+        <CheckBox
+            android:id="@+id/redCheckBox"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="82dp"
+            android:layout_marginEnd="6dp"
+            android:buttonTint="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/redSeekBar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/greenNum"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="185dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="0.0 to 1.0"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintBottom_toTopOf="@+id/greenSeekBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/redSeekBar" />
+
+        <TextView
+            android:id="@+id/greenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="15dp"
+            android:text="Green"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintEnd_toStartOf="@+id/greenSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Red" />
+
+        <SeekBar
+            android:id="@+id/greenSeekBar"
+            android:layout_width="278dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:max="255"
+            android:progressTint="@android:color/holo_green_dark"
+            app:layout_constraintEnd_toStartOf="@+id/greenCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/greenTextView"
+            app:layout_constraintTop_toBottomOf="@+id/greenNum" />
+
+        <CheckBox
+            android:id="@+id/greenCheckBox"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="6dp"
+            android:buttonTint="@android:color/holo_green_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/greenSeekBar"
+            app:layout_constraintTop_toBottomOf="@+id/redCheckBox" />
+
+        <EditText
+            android:id="@+id/blueNum"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="185dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="0.0 to 1.0"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/holo_blue_dark"
+            app:layout_constraintBottom_toTopOf="@+id/blueSeekBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greenSeekBar" />
+
+        <SeekBar
+            android:id="@+id/blueSeekBar"
+            android:layout_width="278dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:max="255"
+            android:progressTint="@android:color/holo_blue_dark"
+            app:layout_constraintEnd_toStartOf="@+id/blueCheckBox"
+            app:layout_constraintStart_toEndOf="@+id/blue"
+            app:layout_constraintTop_toBottomOf="@+id/blueNum" />
+
+        <TextView
+            android:id="@+id/blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="20dp"
+            android:text="Blue"
+            android:textColor="@android:color/holo_blue_dark"
+            app:layout_constraintEnd_toStartOf="@+id/blueSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greenTextView" />
+
+        <CheckBox
+            android:id="@+id/blueCheckBox"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="6dp"
+            android:buttonTint="@android:color/holo_blue_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/blueSeekBar"
+            app:layout_constraintTop_toBottomOf="@+id/greenCheckBox" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="159dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="162dp"
+            android:layout_marginBottom="49dp"
+            android:text="Reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blueSeekBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
